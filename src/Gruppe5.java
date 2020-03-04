@@ -4,6 +4,6 @@ public class Gruppe5 {
         System.out.println("Hallo ihr Schweine!");
         System.out.println("Hallo du Schwein");
         System.out.println("Mache dich aus meiner Leitung du Birne");
-        System.out.println("Hallo Teil Zwei!");
+        System.out.println("Hallo Teil Zwei2!");
     }
 }
