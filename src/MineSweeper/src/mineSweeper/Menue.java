@@ -20,22 +20,15 @@ public class Menue extends JFrame implements ActionListener{
     private Object Frame;
 
 
-    public static void main (String[] args) {
-        Menue frame = new Menue("MineSweeper");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400,400);
-        frame.setLayout(null);
+    public Menue () {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(400,400);
+        setLayout(null);
 
 
-        frame.setLayout(null);
-        frame.setVisible(true);
+        setLayout(null);
+        setVisible(true);
 
-
-
-
-    }
-    public Menue (String title) {
-        super(title);
         start = new JButton("Start");
         start.setBounds(120,40,160,40);
         start.addActionListener(this);
@@ -66,13 +59,11 @@ public class Menue extends JFrame implements ActionListener{
         fenster.setVisible(true);
         fenster.add(option);
     }
-    public static void auswahl() {
 
-    }
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==start) {
-            fenster(new Frame());
+            Frame frame =  new Frame();
         }
         if(e.getSource()==credits) {
             Object[] options= {"Okay"};
