@@ -1,8 +1,11 @@
 package MineSweeper.src.mineSweeper;
 
+import javax.imageio.ImageIO;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 
 public class World
@@ -19,13 +22,17 @@ public class World
 	
 	private Tile[] [] tiles;
 	
-	private BufferedImage bomb = ImageLoader.scale(ImageLoader.loadImage("gfx/bomb.png"), Tile.getWidth(), Tile.getHeight());
-	private BufferedImage flag = ImageLoader.scale(ImageLoader.loadImage("gfx/flag.png"), Tile.getWidth(), Tile.getHeight());
-	private BufferedImage pressed = ImageLoader.scale(ImageLoader.loadImage("gfx/pressed.png"), Tile.getWidth(), Tile.getHeight());
-	private BufferedImage normal = ImageLoader.scale(ImageLoader.loadImage("gfx/normal.png"), Tile.getWidth(), Tile.getHeight());
+	private BufferedImage bomb;
+	private BufferedImage flag;
+	private BufferedImage pressed;
+	private BufferedImage normal;
 	
-	public World()
-	{
+	public World() throws IOException {
+		this.bomb = ImageIO.read(new File("./src/MineSweeper.src/gfx/bomb.png"));
+		this.flag = ImageIO.read(new File ("./src/MineSweeper.src/gfx/flag.png"));
+		this.normal = ImageIO.read(new File ("./src/MineSweeper.src/gfx/normal.png"));
+		this.pressed = ImageIO.read(new File ("./src/MineSweeper.src/gfx/pressed.png"));
+
 		random = new Random();
 		
 		tiles = new Tile[width] [height];
