@@ -1,3 +1,5 @@
+package MineSweeper.src.mineSweeper;
+
 import javax.swing.*;
 
 import java.awt.event.ActionEvent;
@@ -5,14 +7,21 @@ import java.awt.event.ActionListener;
 
 import java.awt.*;
 
-public class frame extends JFrame implements ActionListener{
+/**Java Doc MineSweeper
+ *
+ *
+ * @author Plohotnikov
+ */
+
+public class Menue extends JFrame implements ActionListener{
     private JButton start;
     private JButton credits;
     private JButton ende;
+    private Object Frame;
 
 
     public static void main (String[] args) {
-        frame frame = new frame("Menü");
+        Menue frame = new Menue("MineSweeper");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400,400);
         frame.setLayout(null);
@@ -25,7 +34,7 @@ public class frame extends JFrame implements ActionListener{
 
 
     }
-    public frame (String title) {
+    public Menue (String title) {
         super(title);
         start = new JButton("Start");
         start.setBounds(120,40,160,40);
@@ -50,20 +59,20 @@ public class frame extends JFrame implements ActionListener{
 
     }
 
-    public static void fenster() {
+    public static void fenster(JPanel option) {
         JFrame fenster = new JFrame();
         fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fenster.setSize(650,350);
         fenster.setVisible(true);
-        //fenster.add(new GUI());
-    }s
+        fenster.add(option);
+    }
     public static void auswahl() {
 
     }
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==start) {
-            fenster();
+            fenster(new Frame());
         }
         if(e.getSource()==credits) {
             Object[] options= {"Okay"};
