@@ -1,4 +1,4 @@
-package mineSweeper;
+package MineSweeper.src.mineSweeper;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
