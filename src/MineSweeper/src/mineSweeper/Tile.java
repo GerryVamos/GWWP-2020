@@ -1,4 +1,4 @@
-package mineSweeper;
+package MineSweeper.src.mineSweeper;
 
 import java.awt.Color;
 import java.awt.Graphics;
