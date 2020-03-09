@@ -17,7 +17,7 @@ public class World
 	
 	private Random random;
 	
-	private Tile[] [] tiles;
+	private Tile[][] tiles;
 	
 	private BufferedImage bomb = ImageLoader.scale(ImageLoader.loadImage("gfx/bomb.png"), Tile.getWidth(), Tile.getHeight());
 	private BufferedImage flag = ImageLoader.scale(ImageLoader.loadImage("gfx/flag.png"), Tile.getWidth(), Tile.getHeight());
