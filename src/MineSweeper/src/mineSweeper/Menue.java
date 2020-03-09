@@ -16,6 +16,7 @@ import java.awt.*;
  *
  *
  * @author Plohotnikov
+ * DATE 09.03.2020
  */
 
 public class Menue extends JFrame implements ActionListener{
