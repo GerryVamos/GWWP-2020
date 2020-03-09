@@ -8,6 +8,11 @@ import java.awt.event.ActionListener;
 import java.awt.*;
 
 /**Java Doc MineSweeper
+ *  Hauptmenü des Programms
+ *  start -> öffnet neues Fenster, wo die Frame gestartet wird
+ *  credits -> öffnet eine Messagefenster mit Credits
+ *  ende -> beendet das Programm.
+ *
  *
  *
  * @author Plohotnikov
