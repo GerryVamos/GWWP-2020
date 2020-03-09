@@ -16,6 +16,7 @@ import java.awt.*;
  *
  *
  * @author Plohotnikov
+ * DATE 09.03.2020
  */
 
 public class Menue extends JFrame implements ActionListener{
@@ -27,20 +28,20 @@ public class Menue extends JFrame implements ActionListener{
 
     public Menue () {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400,400);
+        setSize(400,400); //fenster
         setLayout(null);
 
 
         setLayout(null);
         setVisible(true);
 
-        start = new JButton("Start");
+        start = new JButton("Start");                   //Start der Frame
         start.setBounds(120,40,160,40);
         start.addActionListener(this);
         add(start);
 
 
-        credits = new JButton("Information");
+        credits = new JButton("Information");           // Credits fenster
         credits.setBounds(120,200,160,40);
         credits.addActionListener(this);
         add(credits);
@@ -49,11 +50,6 @@ public class Menue extends JFrame implements ActionListener{
         ende.setBounds(120,280,160,40);
         ende.addActionListener(this);
         add(ende);
-
-
-
-
-
 
     }
 
