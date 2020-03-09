@@ -6,5 +6,6 @@ public class Gruppe5 {
         System.out.println("Mache dich aus meiner Leitung du Birne");
         System.out.println("Hallo Teil Zwei2!");
         System.out.println("Hoch die HÄNDE!");
+        System.out.println("Wollen wir mal los legen");
     }
 }
