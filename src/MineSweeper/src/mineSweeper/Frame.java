@@ -13,8 +13,8 @@ import javax.swing.JPanel;
 
 public class Frame extends JFrame implements MouseListener, KeyListener
 {
-	private static int width = 600;
-	private static int height = 600;
+	private static int width = 800;
+	private static int height = 800;
 	
 	private Screen screen;
 	private World world;
@@ -26,7 +26,7 @@ public class Frame extends JFrame implements MouseListener, KeyListener
 	public Frame() throws IOException {
 		super("Minesweeper");
 		
-		world = new World();
+		world = new World(this.width,this.height);
 		
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
