@@ -34,7 +34,6 @@ public class World
 		this.fensterbreite = breite;
 		this.fensterhoehe = hoehe;
 		this.il = new ImageLoader();
-
 		this.bomb = ImageIO.read(new File("src/MineSweeper/src/gfx/bomb.png"));
 		//this.bomb = il.loadImage("src/MineSweeper/src/gfx/bomb.png");
 		this.bomb = il.scale(this.bomb,this.fensterbreite/this.width,this.fensterhoehe/this.height);
