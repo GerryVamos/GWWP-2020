@@ -28,10 +28,10 @@ public class World
 	private BufferedImage normal;
 	
 	public World() throws IOException {
-		this.bomb = ImageIO.read(new File("./src/MineSweeper.src/gfx/bomb.png"));
-		this.flag = ImageIO.read(new File ("./src/MineSweeper.src/gfx/flag.png"));
-		this.normal = ImageIO.read(new File ("./src/MineSweeper.src/gfx/normal.png"));
-		this.pressed = ImageIO.read(new File ("./src/MineSweeper.src/gfx/pressed.png"));
+		this.bomb = ImageIO.read(new File("src/MineSweeper/src/gfx/bomb.png"));
+		this.flag = ImageIO.read(new File ("src/MineSweeper/src/gfx/flag.png"));
+		this.normal = ImageIO.read(new File ("src/MineSweeper/src/gfx/normal.png"));
+		this.pressed = ImageIO.read(new File ("src/MineSweeper/src/gfx/pressed.png"));
 
 		random = new Random();
 		
