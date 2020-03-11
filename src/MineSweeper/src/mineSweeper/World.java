@@ -36,6 +36,7 @@ public class World
 		this.il = new ImageLoader();
 		this.bomb = ImageIO.read(new File("src/MineSweeper/src/gfx/bomb.png"));
 		//this.bomb = il.loadImage("src/MineSweeper/src/gfx/bomb.png");
+
 		this.bomb = il.scale(this.bomb,this.fensterbreite/this.width,this.fensterhoehe/this.height);
 		this.flag = ImageIO.read(new File ("src/MineSweeper/src/gfx/flag.png"));
 		this.flag = il.scale(this.flag,this.fensterbreite/this.width,this.fensterhoehe/this.height);
