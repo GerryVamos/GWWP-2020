@@ -53,7 +53,7 @@ public class Menue extends JFrame implements ActionListener{
 
     }
 
-    public static void fenster(JPanel option) {
+    public static void fenster(JPanel option) {                 // <- VERMUTLICHES PROBLEM
         JFrame fenster = new JFrame();
         fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fenster.setSize(650,350);
@@ -62,7 +62,7 @@ public class Menue extends JFrame implements ActionListener{
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {                // <- Spielausführung
         if(e.getSource()==start) {
             try {
                 Frame frame =  new Frame();
@@ -70,7 +70,7 @@ public class Menue extends JFrame implements ActionListener{
                 ex.printStackTrace();
             }
         }
-        if(e.getSource()==credits) {
+        if(e.getSource()==credits) {                            //<- Credits
             Object[] options= {"Okay"};
 
             JOptionPane.showOptionDialog(null,"Dieses Programm wurde mit besten Wissen und Gewissen von 5 Dummköpfen erstellt(PS: Zanker der HuSo)","title",JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE,null,options,options[0]);
