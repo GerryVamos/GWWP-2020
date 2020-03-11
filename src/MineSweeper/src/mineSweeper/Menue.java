@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import java.awt.*;
+import java.io.IOException;
 
 /**Java Doc MineSweeper
  *  Hauptmenü des Programms
@@ -17,13 +18,12 @@ import java.awt.*;
  *
  * @author Plohotnikov
  * DATE 09.03.2020
- */
+ */ //Problem -> Image öffnet nicht
 
 public class Menue extends JFrame implements ActionListener{
     private JButton start;
     private JButton credits;
     private JButton ende;
-    private Object Frame;
 
 
     public Menue () {
@@ -42,12 +42,12 @@ public class Menue extends JFrame implements ActionListener{
 
 
         credits = new JButton("Information");           // Credits fenster
-        credits.setBounds(120,200,160,40);
+        credits.setBounds(120,120,160,40);
         credits.addActionListener(this);
         add(credits);
 
         ende = new JButton("Beenden");
-        ende.setBounds(120,280,160,40);
+        ende.setBounds(120,200,160,40);
         ende.addActionListener(this);
         add(ende);
 
@@ -64,7 +64,11 @@ public class Menue extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==start) {
-            Frame frame =  new Frame();
+            try {
+                Frame frame =  new Frame();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
         if(e.getSource()==credits) {
             Object[] options= {"Okay"};

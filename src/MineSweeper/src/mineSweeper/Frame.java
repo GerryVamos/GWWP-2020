@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -22,8 +23,7 @@ public class Frame extends JFrame implements MouseListener, KeyListener
 	private int insetLeft;
 	private int insetTop;
 	
-	public Frame()
-	{
+	public Frame() throws IOException {
 		super("Minesweeper");
 		
 		world = new World();
