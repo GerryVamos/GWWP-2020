@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import java.awt.*;
+import java.io.IOException;
 
 /**Java Doc MineSweeper
  *  Hauptmenü des Programms
@@ -17,13 +18,12 @@ import java.awt.*;
  *
  * @author Plohotnikov
  * DATE 09.03.2020
- */
+ */ //Problem -> Image öffnet nicht
 
 public class Menue extends JFrame implements ActionListener{
     private JButton start;
     private JButton credits;
     private JButton ende;
-    private Object Frame;
 
 
     public Menue () {
@@ -42,18 +42,18 @@ public class Menue extends JFrame implements ActionListener{
 
 
         credits = new JButton("Information");           // Credits fenster
-        credits.setBounds(120,200,160,40);
+        credits.setBounds(120,120,160,40);
         credits.addActionListener(this);
         add(credits);
 
         ende = new JButton("Beenden");
-        ende.setBounds(120,280,160,40);
+        ende.setBounds(120,200,160,40);
         ende.addActionListener(this);
         add(ende);
 
     }
 
-    public static void fenster(JPanel option) {
+    public static void fenster(JPanel option) {                 // <- VERMUTLICHES PROBLEM
         JFrame fenster = new JFrame();
         fenster.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fenster.setSize(650,350);
@@ -62,11 +62,15 @@ public class Menue extends JFrame implements ActionListener{
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {                // <- Spielausführung
         if(e.getSource()==start) {
-            Frame frame =  new Frame();
+            try {
+                Frame frame =  new Frame();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
-        if(e.getSource()==credits) {
+        if(e.getSource()==credits) {                            //<- Credits
             Object[] options= {"Okay"};
 
             JOptionPane.showOptionDialog(null,"Dieses Programm wurde mit besten Wissen und Gewissen von 5 Dummköpfen erstellt(PS: Zanker der HuSo)","title",JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE,null,options,options[0]);
