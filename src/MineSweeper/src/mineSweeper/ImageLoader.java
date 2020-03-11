@@ -3,6 +3,7 @@ package MineSweeper.src.mineSweeper;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Objects;
 
 import javax.imageio.ImageIO;
 
@@ -12,7 +13,7 @@ public class ImageLoader
 	{
 		try
 		{
-			return ImageIO.read(ImageLoader.class.getClassLoader().getResourceAsStream(path));
+			return ImageIO.read(Objects.requireNonNull(ImageLoader.class.getClassLoader().getResourceAsStream(path)));
 		} catch(IOException e)
 		{
 			e.printStackTrace();

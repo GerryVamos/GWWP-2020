@@ -1,8 +1,7 @@
 package MineSweeper.src.mineSweeper;
 
 import javax.imageio.ImageIO;
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +11,10 @@ public class World
 {
 	private static int width = 20;
 	private static int height = 20;
-	
+
+	private int fensterbreite;
+	private int fensterhoehe;
+
 	private final int AMOUNT_OF_BOMBS = 20;
 	
 	private boolean finish;
@@ -20,18 +22,29 @@ public class World
 	
 	private Random random;
 	
-	private Tile[] [] tiles;
+	private Tile[][] tiles;
 	
 	private BufferedImage bomb;
 	private BufferedImage flag;
 	private BufferedImage pressed;
 	private BufferedImage normal;
+	private ImageLoader il;
 	
-	public World() throws IOException {
+	public World(int breite, int hoehe) throws IOException {
+		this.fensterbreite = breite;
+		this.fensterhoehe = hoehe;
+		this.il = new ImageLoader();
 		this.bomb = ImageIO.read(new File("src/MineSweeper/src/gfx/bomb.png"));
+		//this.bomb = il.loadImage("src/MineSweeper/src/gfx/bomb.png");
+
+		this.bomb = il.scale(this.bomb,this.fensterbreite/this.width,this.fensterhoehe/this.height);
 		this.flag = ImageIO.read(new File ("src/MineSweeper/src/gfx/flag.png"));
+		this.flag = il.scale(this.flag,this.fensterbreite/this.width,this.fensterhoehe/this.height);
 		this.normal = ImageIO.read(new File ("src/MineSweeper/src/gfx/normal.png"));
+		this.normal = il.scale(this.normal,this.fensterbreite/this.width,this.fensterhoehe/this.height);
 		this.pressed = ImageIO.read(new File ("src/MineSweeper/src/gfx/pressed.png"));
+		this.pressed = il.scale(this.pressed,this.fensterbreite/this.width,this.fensterhoehe/this.height);
+
 
 		random = new Random();
 		
@@ -144,14 +157,11 @@ public class World
 			if(mx >= 0&&my >= 0&&tiles[mx] [my].canOpen()) open(mx, my);
 			if(mx >= 0&&tiles[mx] [y].canOpen()) open(mx, y);
 			if(mx >= 0&&gy < height&&tiles[mx] [gy].canOpen()) open(mx, gy);
-			
 			if(my >= 0&&tiles[x] [my].canOpen()) open(x, my);
 			if(gy < height&&tiles[x] [gy].canOpen()) open(x, gy);
-			
 			if(gx < width&&my >= 0&&tiles[gx] [my].canOpen()) open(gx, my);
 			if(gx < width&&tiles[gx] [y].canOpen()) open(gx, y);
 			if(gx < width&&gy < height&&tiles[gx] [gy].canOpen()) open(gx, gy);
-			
 //			if(mx >= 0&&tiles[mx] [y].canOpen()) open(mx, y);
 //			if(gx < width&&tiles[gx] [y].canOpen()) open(gx, y);
 //			if(my >= 0&&tiles[x] [my].canOpen()) open(x, my);
