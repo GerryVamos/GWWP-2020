@@ -18,10 +18,10 @@ public class Tile
 	private boolean flag;
 	private int amountOfNearBombs;
 	
-	private static int width = Frame.getScreenWidth()/World.getWidth(); 
-	private static int height = Frame.getScreenHeight()/World.getHeight(); 
+	private static int width = Frame.getScreenWidth()/World.getWidth(); 												//Breite
+	private static int height = Frame.getScreenHeight()/World.getHeight(); 												//Höhe
 	
-	public Tile(int x, int y, BufferedImage normal, BufferedImage bomb, BufferedImage openedImage, BufferedImage flag)
+	public Tile(int x, int y, BufferedImage normal, BufferedImage bomb, BufferedImage openedImage, BufferedImage flag)	//Felder
 	{
 		this.x = x;
 		this.y = y;
@@ -31,7 +31,7 @@ public class Tile
 		this.flagImage = flag;
 	}
 	
-	public void setOpenedImage(BufferedImage openedImage)
+	public void setOpenedImage(BufferedImage openedImage)																//Methoden zum Steuern der Spielereignisse
 	{
 		this.openedImage = openedImage;
 	}
@@ -92,7 +92,7 @@ public class Tile
 		opened = false;
 	}
 
-	public void draw(Graphics g)
+	public void draw(Graphics g)																						//grafische Steuerung
 	{
 		if(!opened) 
 		{

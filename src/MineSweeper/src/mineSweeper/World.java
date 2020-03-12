@@ -12,10 +12,10 @@ public class World
 	private static int width = 20;
 	private static int height = 20;
 
-	private int fensterbreite;
-	private int fensterhoehe;
+	private int fensterbreite;																							//Breite
+	private int fensterhoehe;																							//Höhe
 
-	private final int AMOUNT_OF_BOMBS = 20;
+	private final int AMOUNT_OF_BOMBS = 20;																				//20 Bomben pro Spiel
 	
 	private boolean finish;
 	private boolean dead;
@@ -30,18 +30,20 @@ public class World
 	private BufferedImage normal;
 	private ImageLoader il;
 	
-	public World(int breite, int hoehe) throws IOException {
+	public World(int breite, int hoehe) throws IOException {															//Einfügen der Symbole und Festlegen der Größe
 		this.fensterbreite = breite;
 		this.fensterhoehe = hoehe;
 		this.il = new ImageLoader();
-		this.bomb = ImageIO.read(new File("src/MineSweeper/src/gfx/bomb.png"));
-		//this.bomb = il.loadImage("src/MineSweeper/src/gfx/bomb.png");
 
+		this.bomb = ImageIO.read(new File("src/MineSweeper/src/gfx/bomb.png"));								//Bombe
 		this.bomb = il.scale(this.bomb,this.fensterbreite/this.width,this.fensterhoehe/this.height);
-		this.flag = ImageIO.read(new File ("src/MineSweeper/src/gfx/flag.png"));
+
+		this.flag = ImageIO.read(new File ("src/MineSweeper/src/gfx/flag.png"));								//Flagge
 		this.flag = il.scale(this.flag,this.fensterbreite/this.width,this.fensterhoehe/this.height);
+
 		this.normal = ImageIO.read(new File ("src/MineSweeper/src/gfx/normal.png"));
 		this.normal = il.scale(this.normal,this.fensterbreite/this.width,this.fensterhoehe/this.height);
+
 		this.pressed = ImageIO.read(new File ("src/MineSweeper/src/gfx/pressed.png"));
 		this.pressed = il.scale(this.pressed,this.fensterbreite/this.width,this.fensterhoehe/this.height);
 
@@ -61,7 +63,7 @@ public class World
 		reset();
 	}
 	
-	private void placeBombs()
+	private void placeBombs()																							//zufälliges Platzieren der Bomben
 	{
 		for(int i = 0;i < AMOUNT_OF_BOMBS;i++)
 		{
@@ -69,7 +71,7 @@ public class World
 		}
 	}
 	
-	private void placeBomb()
+	private void placeBomb()																							//Zuordnung der Bomben zu Feldern
 	{
 		int x = random.nextInt(width);
 		int y = random.nextInt(height);
@@ -106,7 +108,7 @@ public class World
 		}
 	}
 	
-	public void clickedLeft(int x, int y)
+	public void clickedLeft(int x, int y)																				//Aktion bei Linksklick
 	{
 		if(!dead&&!finish)
 		{
@@ -131,7 +133,7 @@ public class World
 		}
 	}
 	
-	public void clickedRight(int x, int y)
+	public void clickedRight(int x, int y)																				//Aktion bei Rechtsklick
 	{
 		if(!dead&&!finish)
 		{
@@ -143,7 +145,7 @@ public class World
 		}
 	}
 	
-	private void open(int x, int y)
+	private void open(int x, int y)																						//Öffnen der Felder
 	{
 		tiles[x] [y].setOpened(true);
 		if(tiles[x] [y].getAmountOfNearBombs() == 0)
